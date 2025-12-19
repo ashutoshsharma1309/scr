@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "title": "Introduction to Web Development",
+        "description": "Learn the basics of HTML, CSS, and JavaScript to build your first website.",
+        "instructor": "Dr. Sarah Smith",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=web",
+        "category": "Programming",
+        "level": "Beginner",
+        "duration": "12 Weeks",
+        "students": 1250,
+        "rating": 4.8,
+        "price": 0,
+        "language": "en"
+    },
+    {
+        "id": "2",
+        "title": "Data Science Fundamentals",
+        "description": "Master the art of data analysis and visualization using Python.",
+        "instructor": "Prof. James Wilson",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=data",
+        "category": "Data Science",
+        "level": "Intermediate",
+        "duration": "10 Weeks",
+        "students": 850,
+        "rating": 4.9,
+        "price": 0,
+        "language": "en"
+    },
+    {
+        "id": "3",
+        "title": "वेब विकास का परिचय",
+        "description": "अपनी पहली वेबसाइट बनाने के लिए HTML, CSS और JavaScript की मूल बातें सीखें।",
+        "instructor": "अनिल शर्मा",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=hindi-web",
+        "category": "Programming",
+        "level": "Beginner",
+        "duration": "12 सप्ताह",
+        "students": 3200,
+        "rating": 4.7,
+        "price": 0,
+        "language": "hi"
+    },
+    {
+        "id": "4",
+        "title": "डिजिटल मार्केटिंग",
+        "description": "SEO, सोशल मीडिया और ईमेल मार्केटिंग के साथ अपने व्यवसाय को ऑनलाइन बढ़ाएं।",
+        "instructor": "प्रिया पाटिल",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=marketing",
+        "category": "Marketing",
+        "level": "Beginner",
+        "duration": "8 सप्ताह",
+        "students": 2100,
+        "rating": 4.6,
+        "price": 0,
+        "language": "hi"
+    }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1766124711202",
+    "name": "ashutosh",
+    "email": "ashutoshsharma1395@gmail.com",
+    "password": "$2a$10$/jUaC9sjKOrm0SlckSgYeOz.tbr1Xs6qc5cH/pvKWrezyyO0i0iPC",
+    "role": "student",
+    "enrolledCourses": [],
+    "progress": {},
+    "createdAt": "2025-12-19T06:11:51.202Z"
+  }
+]
