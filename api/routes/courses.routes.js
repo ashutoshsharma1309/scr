@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { authMiddleware } = require('../middleware/auth.middleware');
 
-const coursesPath = path.join(__dirname, '../../data/courses.json');
+const coursesPath = path.join(__dirname, '../data/courses.json');
 
 // Get all courses
 router.get('/', (req, res) => {

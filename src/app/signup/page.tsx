@@ -1,19 +1,18 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Button from '@/components/Button';
 import Card, { CardBody } from '@/components/Card';
-import styles from './page.module.css';
+import styles from '../login/page.module.css'; // Reuse Login styles
 
-export default function LoginPage() {
+export default function SignupPage() {
     const router = useRouter();
     const { login } = useAuth();
     const { t } = useLanguage();
-    const [formData, setFormData] = useState({ email: '', password: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', password: '', role: 'student' });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -23,7 +22,7 @@ export default function LoginPage() {
         setError('');
 
         try {
-            const res = await fetch('http://localhost:3001/api/auth/login', {
+            const res = await fetch('/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -34,7 +33,7 @@ export default function LoginPage() {
                 login(data.token, data.user);
                 router.push('/dashboard');
             } else {
-                setError(data.message || 'Login failed');
+                setError(data.message || 'Signup failed');
             }
         } catch (err) {
             setError('Could not connect to server');
@@ -48,13 +47,23 @@ export default function LoginPage() {
             <Card glass className={styles.loginCard}>
                 <CardBody>
                     <div className={styles.header}>
-                        <h1>Welcome Back</h1>
-                        <p>Continue your learning journey with EduAccess.</p>
+                        <h1>Create Account</h1>
+                        <p>Start your inclusive learning journey today.</p>
                     </div>
 
                     {error && <div className={styles.error}>{error}</div>}
 
                     <form onSubmit={handleSubmit} className={styles.form}>
+                        <div className={styles.inputGroup}>
+                            <label>Full Name</label>
+                            <input
+                                type="text"
+                                required
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                placeholder="John Doe"
+                            />
+                        </div>
                         <div className={styles.inputGroup}>
                             <label>Email Address</label>
                             <input
@@ -75,13 +84,25 @@ export default function LoginPage() {
                                 placeholder="••••••••"
                             />
                         </div>
+                        <div className={styles.inputGroup}>
+                            <label>Role</label>
+                            <select
+                                value={formData.role}
+                                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                                className={styles.select}
+                                style={{ padding: '0.75rem', borderRadius: '8px', background: 'var(--background)', color: 'var(--text-main)', border: '1px solid var(--border)' }}
+                            >
+                                <option value="student">Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
                         <Button type="submit" loading={loading} style={{ width: '100%', marginTop: '1rem' }}>
-                            Sign In
+                            Create Account
                         </Button>
                     </form>
 
                     <p className={styles.footer}>
-                        Don't have an account? <a href="/signup">Sign Up</a>
+                        Already have an account? <a href="/login">Sign In</a>
                     </p>
                 </CardBody>
             </Card>

@@ -32,7 +32,7 @@ export default function CoursesPage() {
     const fetchCourses = async () => {
         setLoading(true);
         try {
-            const res = await fetch(`http://localhost:3001/api/courses?language=${language}`);
+            const res = await fetch(`/api/courses?language=${language}`);
             const data = await res.json();
             if (data.success) {
                 setCourses(data.data);

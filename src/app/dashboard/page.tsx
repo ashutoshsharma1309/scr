@@ -21,7 +21,7 @@ export default function DashboardPage() {
 
     const fetchDashboard = async () => {
         try {
-            const res = await fetch('http://localhost:3001/api/users/dashboard', {
+            const res = await fetch('/api/users/dashboard', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const json = await res.json();
