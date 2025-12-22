@@ -8,7 +8,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     size?: 'sm' | 'md' | 'lg';
     loading?: boolean;
     glow?: boolean;
+    href?: string;
 }
+
+import Link from 'next/link';
 
 export default function Button({
     children,
@@ -17,11 +20,10 @@ export default function Button({
     loading,
     glow,
     className,
+    href,
     ...props
 }: ButtonProps) {
-    return (
-        <button
-            className={`
+    const buttonClass = `
         btn-dynamic
         ${styles.btn}
         ${styles[variant]}
@@ -29,7 +31,19 @@ export default function Button({
         ${glow ? styles.glow : ''}
         ${loading ? styles.loading : ''}
         ${className || ''}
-      `}
+    `;
+
+    if (href) {
+        return (
+            <Link href={href} className={buttonClass} style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                {children}
+            </Link>
+        );
+    }
+
+    return (
+        <button
+            className={buttonClass}
             disabled={loading || props.disabled}
             {...props}
         >

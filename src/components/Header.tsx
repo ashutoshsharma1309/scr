@@ -47,12 +47,20 @@ export default function Header() {
                         </Link>
                     ))}
                     {isAuthenticated && (
-                        <Link
-                            href="/dashboard"
-                            className={`${styles.link} ${pathname === '/dashboard' ? styles.activeLink : ''}`}
-                        >
-                            {t('dashboard')}
-                        </Link>
+                        <>
+                            <Link
+                                href="/dashboard"
+                                className={`${styles.link} ${pathname === '/dashboard' ? styles.activeLink : ''}`}
+                            >
+                                {t('dashboard')}
+                            </Link>
+                            <Link
+                                href="/profile"
+                                className={`${styles.link} ${pathname === '/profile' ? styles.activeLink : ''}`}
+                            >
+                                {t('profile')}
+                            </Link>
+                        </>
                     )}
                 </nav>
 

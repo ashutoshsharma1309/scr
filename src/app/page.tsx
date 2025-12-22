@@ -56,15 +56,23 @@ export default function LandingPage() {
                             padding: '1rem 2rem',
                             fontSize: '1.1rem',
                             borderRadius: 'var(--radius)',
-                            boxShadow: '0 10px 20px -5px var(--primary-glow)'
-                        }}>
+                            boxShadow: '0 10px 30px -5px var(--primary-glow)',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                        }}
+                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                        >
                             {t('getStarted')}
                         </Link>
                         <Link href="/courses" className="btn-dynamic glass" style={{
                             padding: '1rem 2rem',
                             fontSize: '1.1rem',
-                            borderRadius: 'var(--radius)'
-                        }}>
+                            borderRadius: 'var(--radius)',
+                            transition: 'all 0.3s ease'
+                        }}
+                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                        >
                             {t('browseCourses')}
                         </Link>
                     </div>

@@ -23,7 +23,10 @@ const translations: Translations = {
         signup: "Sign Up",
         dashboard: "Dashboard",
         language: "Language",
-        logout: "Logout"
+        logout: "Logout",
+        profile: "Profile",
+        enrolledCourses: "My Courses",
+        settings: "Settings"
     },
     hi: {
         heroTitle: "सभी के लिए शिक्षा",
@@ -37,7 +40,10 @@ const translations: Translations = {
         signup: "साइन अप",
         dashboard: "डैशबोर्ड",
         language: "भाषा",
-        logout: "लॉगआउट"
+        logout: "लॉगआउट",
+        profile: "प्रोफ़ाइल",
+        enrolledCourses: "मेरे कोर्स",
+        settings: "सेटिंग्स"
     }
 };
 

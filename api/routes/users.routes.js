@@ -8,10 +8,11 @@ router.get('/dashboard', authMiddleware, (req, res) => {
         success: true,
         data: {
             stats: [
-                { label: 'Courses in Progress', value: 2 },
-                { label: 'Completed Courses', value: 3 },
-                { label: 'Learning Hours', value: 24 },
-                { label: 'Certificates', value: 1 }
+                { label: 'Courses in Progress', value: 3 },
+                { label: 'Completed Courses', value: 5 },
+                { label: 'Learning Hours', value: 42 },
+                { label: 'Certificates', value: 2 },
+                { label: 'Quiz Score', value: '88%' }
             ],
             enrolledCourses: [
                 {
@@ -25,6 +26,12 @@ router.get('/dashboard', authMiddleware, (req, res) => {
                     title: 'वेब विकास का परिचय',
                     progress: 80,
                     lastAccessed: '2025-12-19'
+                },
+                {
+                    id: '5',
+                    title: 'UX/UI Design Principles',
+                    progress: 15,
+                    lastAccessed: '2025-12-20'
                 }
             ]
         }

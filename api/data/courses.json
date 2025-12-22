@@ -54,5 +54,33 @@
         "rating": 4.6,
         "price": 0,
         "language": "hi"
+    },
+    {
+        "id": "5",
+        "title": "UX/UI Design Principles",
+        "description": "Create stunning user interfaces and experiences with modern design tools.",
+        "instructor": "Emma Davis",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=design",
+        "category": "Design",
+        "level": "Intermediate",
+        "duration": "6 Weeks",
+        "students": 1500,
+        "rating": 4.9,
+        "price": 0,
+        "language": "en"
+    },
+    {
+        "id": "6",
+        "title": "Machine Learning for Beginners",
+        "description": "An intuitive introduction to ML algorithms and their applications.",
+        "instructor": "Dr. Robert Chen",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=ml",
+        "category": "AI/ML",
+        "level": "Beginner",
+        "duration": "14 Weeks",
+        "students": 950,
+        "rating": 4.7,
+        "price": 0,
+        "language": "en"
     }
 ]
