@@ -11,6 +11,7 @@ interface User {
     collegeName?: string;
     state?: string;
     onboardingComplete?: boolean;
+    enrolledCourses?: string[]; // Array of course IDs
 }
 
 interface AuthContextType {
@@ -19,6 +20,7 @@ interface AuthContextType {
     login: (token: string, user: User) => void;
     logout: () => void;
     updateUser: (data: Partial<User>) => void;
+    enrollInCourse: (courseId: string) => void;
     isAuthenticated: boolean;
 }
 
@@ -39,9 +41,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const login = (newToken: string, newUser: User) => {
         setToken(newToken);
-        setUser(newUser);
+        setUser({ ...newUser, enrolledCourses: newUser.enrolledCourses || [] });
         localStorage.setItem('token', newToken);
-        localStorage.setItem('user', JSON.stringify(newUser));
+        localStorage.setItem('user', JSON.stringify({ ...newUser, enrolledCourses: newUser.enrolledCourses || [] }));
     };
 
     const logout = () => {
@@ -58,8 +60,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         localStorage.setItem('user', JSON.stringify(updatedUser));
     };
 
+    const enrollInCourse = (courseId: string) => {
+        if (!user) return;
+        const enrolled = user.enrolledCourses || [];
+        if (!enrolled.includes(courseId)) {
+            const updatedUser = { ...user, enrolledCourses: [...enrolled, courseId] };
+            setUser(updatedUser);
+            localStorage.setItem('user', JSON.stringify(updatedUser));
+        }
+    };
+
     return (
-        <AuthContext.Provider value={{ user, token, login, logout, updateUser, isAuthenticated: !!token }}>
+        <AuthContext.Provider value={{ user, token, login, logout, updateUser, enrollInCourse, isAuthenticated: !!token }}>
             {children}
         </AuthContext.Provider>
     );

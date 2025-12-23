@@ -51,19 +51,19 @@ export default function ProfilePage() {
                     <h2>📊 {t('statistics') || 'Statistics'}</h2>
                     <div className={styles.statGrid}>
                         <Card glass className={styles.statItem}>
-                            <span className={styles.statValue}>4</span>
+                            <span className={styles.statValue}>0</span>
                             <span className={styles.statLabel}>Courses Enrolled</span>
                         </Card>
                         <Card glass className={styles.statItem}>
-                            <span className={styles.statValue}>85%</span>
+                            <span className={styles.statValue}>0</span>
                             <span className={styles.statLabel}>Average Score</span>
                         </Card>
                         <Card glass className={styles.statItem}>
-                            <span className={styles.statValue}>2</span>
+                            <span className={styles.statValue}>0</span>
                             <span className={styles.statLabel}>Certificates Won</span>
                         </Card>
                         <Card glass className={styles.statItem}>
-                            <span className={styles.statValue}>12h</span>
+                            <span className={styles.statValue}>0</span>
                             <span className={styles.statLabel}>Learning Time</span>
                         </Card>
                     </div>

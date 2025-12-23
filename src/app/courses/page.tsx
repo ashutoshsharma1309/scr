@@ -6,18 +6,7 @@ import Card, { CardHeader, CardBody, CardFooter } from '@/components/Card';
 import Button from '@/components/Button';
 import styles from './page.module.css';
 
-interface Course {
-    id: string;
-    title: string;
-    description: string;
-    instructor: string;
-    thumbnail: string;
-    category: string;
-    level: string;
-    students: number;
-    rating: number;
-    language: string;
-}
+import { mockCourses, Course } from '@/data/courses';
 
 export default function CoursesPage() {
     const { language, t } = useLanguage();
@@ -26,23 +15,11 @@ export default function CoursesPage() {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        fetchCourses();
+        // Simulate local data loading
+        const filtered = mockCourses.filter(c => c.language === language);
+        setCourses(filtered);
+        setLoading(false);
     }, [language]);
-
-    const fetchCourses = async () => {
-        setLoading(true);
-        try {
-            const res = await fetch(`/api/courses?language=${language}`);
-            const data = await res.json();
-            if (data.success) {
-                setCourses(data.data);
-            }
-        } catch (error) {
-            console.error('Error fetching courses:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const filteredCourses = courses.filter(c =>
         c.title.toLowerCase().includes(search.toLowerCase())
@@ -96,7 +73,7 @@ export default function CoursesPage() {
                                         </div>
                                         <span>{course.instructor}</span>
                                     </div>
-                                    <Button size="sm" glow>Enroll Now</Button>
+                                    <Button size="sm" glow href={`/courses/${course.id}`}>Enroll Now</Button>
                                 </CardFooter>
                             </Card>
                         ))
