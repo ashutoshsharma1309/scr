@@ -57,6 +57,20 @@
     margin-top: 0.5rem;
 }
 
+.academicInfo {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.academicInfo strong {
+    color: var(--text-main);
+    margin-right: 0.5rem;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 2fr;

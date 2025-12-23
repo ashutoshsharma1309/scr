@@ -36,6 +36,11 @@ export default function ProfilePage() {
                             <h1>{user.name}</h1>
                             <p>{user.email}</p>
                             <span className={styles.roleBadge}>{user.role}</span>
+                            <div className={styles.academicInfo}>
+                                {user.age && <span><strong>Age:</strong> {user.age}</span>}
+                                {user.collegeName && <span><strong>College:</strong> {user.collegeName}</span>}
+                                {user.state && <span><strong>State:</strong> {user.state}</span>}
+                            </div>
                         </div>
                     </div>
                 </CardBody>

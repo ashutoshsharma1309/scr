@@ -14,6 +14,20 @@
         "language": "en"
     },
     {
+        "id": "7",
+        "title": "Data Structures & Algorithms (DSA)",
+        "description": "Master essential algorithmic patterns and data structures for technical interviews.",
+        "instructor": "Prof. David Miller",
+        "thumbnail": "https://api.dicebear.com/7.x/shapes/svg?seed=dsa",
+        "category": "Advanced",
+        "level": "Intermediate",
+        "duration": "16 Weeks",
+        "students": 980,
+        "rating": 4.9,
+        "price": 0,
+        "language": "en"
+    },
+    {
         "id": "2",
         "title": "Data Science Fundamentals",
         "description": "Master the art of data analysis and visualization using Python.",

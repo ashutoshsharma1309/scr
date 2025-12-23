@@ -22,25 +22,27 @@ export default function LoginPage() {
         setLoading(true);
         setError('');
 
-        try {
-            const res = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
+        // Mock login delay
+        setTimeout(() => {
+            if (formData.email && formData.password) {
+                // Mock user data
+                const mockUser = {
+                    id: 'rural-' + Date.now(),
+                    name: formData.email.split('@')[0],
+                    email: formData.email,
+                    role: 'student' as const,
+                    onboardingComplete: false
+                };
 
-            const data = await res.json();
-            if (data.success) {
-                login(data.token, data.user);
-                router.push('/dashboard');
+                login('mock-token-' + Date.now(), mockUser);
+
+                // Redirect to setup if onboarding not complete
+                router.push('/profile/setup');
             } else {
-                setError(data.message || 'Login failed');
+                setError('Please provide email and password');
             }
-        } catch (err) {
-            setError('Could not connect to server');
-        } finally {
             setLoading(false);
-        }
+        }, 800);
     };
 
     return (
